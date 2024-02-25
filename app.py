@@ -50,12 +50,11 @@ logger.setLevel(logging.INFO)
 
 app = Flask(__name__)
 CORS(app, origins='http://localhost:3000', supports_credentials=True)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://mezz_a8l8_user:mp2XYTZur9h5Okxk9KnnoLQ7yVWB9xuv@dpg-cnd2fv2cn0vc73f4rj9g-a.oregon-postgres.render.com/mezz_a8l8'
-# 'postgresql://shreeya:GTKvyyIQBPdE2lWnD80WhuhVm8JCtJ2B@dpg-clso8ftcm5oc73b94350-a.oregon-postgres.render.com/mezzprofinal'
+app.config["SQLALCHEMY_DATABASE_URI"] = ''
 load_dotenv()
 app.config['UPLOAD_FOLDER'] = os.path.join('.', 'pdfs')
 db = SQLAlchemy(app)
-app.secret_key = '6de23aa303c89bb1ab31a42a39b419ba3ce26cae8821cfa7c060878c63b827b1'
+app.secret_key = ''
 
 
 app.config['MAIL_SERVER'] = 'smtp.example.com'
@@ -71,14 +70,14 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 # # Define your OpenAI GPT-3 API key
-openai.api_key = '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'
+openai.api_key = ''
 client = openai
 
 #GSTIN api token
-api_token ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTg0MDE3MSwianRpIjoiYjNhNmJjNmItNzE1Yy00OTU0LThkNTgtMTI4ODY5NWM5MTA1IiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2Lm1pbnFyb0BhYWRoYWFyYXBpLmlvIiwibmJmIjoxNjQ5ODQwMTcxLCJleHAiOjE5NjUyMDAxNzEsInVzZXJfY2xhaW1zIjp7InNjb3BlcyI6WyJyZWFkIl19fQ.8KK8EnikhK58RtPtjV_oTl2qcs8YaZTtGgZBjjEl3vk"
+api_token =""
 
 #API_KEY for IRN validation 
-api_key = "AL8n2R0O1b8R5E9I7B"
+api_key = ""
 # Initialize JWT
 jwt = JWTManager(app)
 
